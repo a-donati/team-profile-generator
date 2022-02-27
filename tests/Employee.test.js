@@ -1,5 +1,6 @@
 const Employee = require('../tests/dist/lib/Employee.js')
 
+
 test("Can instantiate Employee instance", () => {
     const e = new Employee();
     expect(typeof(e)).toBe("object");
@@ -35,8 +36,8 @@ test("Can instantiate Employee instance", () => {
     expect(e.getId()).toEqual(test);
   });
 
-  test("Can get role ('Employee') via getRole()", () => {
+    test("Can get role via getRole()", () => {
     const test = 'Employee';
     const e = new Employee("Darrell", 4, "abc@123.com")
-    expect(e.getRole()).toEqual('Employee');
+    expect(e.getRole()).toEqual(test);
   });

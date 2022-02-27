@@ -1,5 +1,3 @@
-const inquirer = require("inquirer");
-// prompt user for questions
 // choice prompt - choose manager, engineer, intern
 class Employee {
     constructor(name, id, email){
