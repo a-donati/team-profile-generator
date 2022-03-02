@@ -6,20 +6,19 @@ const generateTeam = (team) => {
     // generate manager html card by inserting manager information into card template
     const generateManager = manager => {
         let managerHtml = `
-        <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">${manager.name}</h5>
-                  <p class="card-text"><i class='fa fa-id-badge p-2'></i>Manager</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Employee Id: ${manager.id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-                    <li class="list-group-item">Office number: ${manager.officeNumber}</li>
-                  </ul>
-              </div>
-            </div>
+        <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+        <div class="card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class='fa fa-id-badge p-2'></i> ${manager.name}</h5>
+            <p class="card-text mb-4"><ul class="list-group list-group-flush">
+            <li class="list-group-item">Role: ${manager.role}</li>
+              <li class="list-group-item">Employee Id: ${manager.id}</li>
+              <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+              <li class="list-group-item">Office number: ${manager.officeNumber}</li>
+            </ul></p>
+          </div>
+        </div>
+      </div>
         `;
         // manager HTML is pushed into html array to be inserted within the body of team function below
         html.push(managerHtml)
@@ -27,20 +26,19 @@ const generateTeam = (team) => {
     // generate engineer html card using engineer object key value pairs
     const generateEngineer = engineer => {
         let engineerHtml = `
-        <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">${engineer.name}</h5>
-                  <p class="card-text"><i class='fas fa-otter'></i>Engineer</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Employee Id: ${engineer.id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-                    <li class="list-group-item">Github: <a target="_blank" href="http://www.github.com/${engineer.github}">${engineer.github}</a></li>
-                  </ul>
-              </div>
-            </div>
+        <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+        <div class="card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class="fab fa-github"></i> ${engineer.name}</h5>
+            <p class="card-text mb-4"><ul class="list-group list-group-flush">
+            <li class="list-group-item">Role: ${engineer.role}</li>
+              <li class="list-group-item">Employee Id: ${engineer.id}</li>
+              <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+              <li class="list-group-item">Github: <a target="_blank" href="http://www.github.com/${engineer.gitHub}">${engineer.gitHub}</a></li>
+            </ul></p>
+          </div>
+        </div>
+      </div>
         `;
          // engineer HTML is pushed into html array to be inserted within the body of team function below
         html.push(engineerHtml)
@@ -48,21 +46,19 @@ const generateTeam = (team) => {
         // generate intern html card using intern object key value pairs
         const generateIntern = intern => {
             let internHtml = `
-            <div class="col">
-                  <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">${intern.name}</h5>
-                      <p class="card-text"><i class='fa fa-user-graduate'></i>
-                      Intern</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Employee Id: ${intern.id}</li>
-                        <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
-                        <li class="list-group-item">School:${intern.school}</li>
-                      </ul>
-                  </div>
-                </div>
+            <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title"><i class='fa fa-user-graduate'></i> ${intern.name}</h5>
+                <p class="card-text mb-4"><ul class="list-group list-group-flush">
+                <li class="list-group-item">Role: ${intern.role}</li>
+                  <li class="list-group-item">Employee Id: ${intern.id}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
+                  <li class="list-group-item">School: ${intern.school}</li>
+                </ul></p>
+              </div>
+            </div>
+          </div>
             `;
              // intern HTML is pushed into html array to be inserted within the body of team function below
             html.push(internHtml)
@@ -98,12 +94,20 @@ return `
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <title>Team Profile</title>
 </head>
-<body>
+<body class="bg-light">
     <header class="bg-dark p-4"><h1 class="text-white mx-auto text-center"><i class='fa fa-user-circle p-4'></i>Employees</h1></header>
 
     <main>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+    <section class="pt-5 pb-5">
+    <div class="container">
+      <div class="row pt-5">
+        <div class="col-12">
+          <h3 class="border-bottom mb-4">Team</h3>
+        </div>
+      </div>
+      <div class="row">
+
       ${generateTeam(team)}
       </div>
     </main>

@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const Manager = require('./tests/dist/lib/Manager');
-const Engineer = require('./tests/dist/lib/Engineer');
-const Intern = require('./tests/dist/lib/Intern');
+const Manager = require('./test/dist/lib/Manager');
+const Engineer = require('./test/dist/lib/Engineer');
+const Intern = require('./test/dist/lib/Intern');
 const generateTeam = require('./generatehtml.js');
 const fs = require('fs');
 const path = require('path');
@@ -244,11 +244,13 @@ const promptEngineer = () => {
 
         // once finished, buildTeam() writes to index.html, teamMembers array is passed into generateTeam();
         const buildTeam = () => {
-            // if(!fs.existsSync(OUTPUT_DIR)){
-            //     fs.mkdirSync(OUTPUT_DIR)
-            // }
-            // fs.writeFileSync(outputPath, generateTeam(teamMembers), "utf-8")
-            fs.writeFile('./tests/dist/index.html', generateTeam(teamMembers), (err) => err ? console.error(err) : console.log('Success!'));
+            //check to see if "output" file does not exist, if so, create one
+            if(!fs.existsSync(OUTPUT_DIR)){
+                fs.mkdirSync(OUTPUT_DIR)
+            }
+            // write to /output/index.html with generateTeam(teamMembers) data
+            fs.writeFileSync(outputPath, generateTeam(teamMembers), "utf-8")
+            // fs.writeFile('./tests/dist/index.html', generateTeam(teamMembers), (err) => err ? console.error(err) : console.log('Success!'));
         }
 
 
