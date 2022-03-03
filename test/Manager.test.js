@@ -1,4 +1,4 @@
-const Manager = require('../test/dist/lib/Manager.js')
+const Manager = require('../dist/lib/Manager')
 
 test("Can instantiate Manager instance", () => {
   const e = new Manager();

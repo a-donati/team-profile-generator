@@ -1,4 +1,4 @@
-const Intern = require("../test/dist/lib/Intern.js");
+const Intern = require("../dist/lib/Intern");
 
 test("Can instantiate Intern instance", () => {
   const e = new Intern();

@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-const Manager = require('./test/dist/lib/Manager');
-const Engineer = require('./test/dist/lib/Engineer');
-const Intern = require('./test/dist/lib/Intern');
-const generateTeam = require('./generatehtml.js');
+const Manager = require('./dist/lib/Manager');
+const Engineer = require('./dist/lib/Engineer');
+const Intern = require('./dist/lib/Intern');
+const generateTeam = require('./dist/lib/src/generatehtml.js');
 const fs = require('fs');
 const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, "output");

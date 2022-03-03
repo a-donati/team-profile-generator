@@ -1,4 +1,4 @@
-const Employee = require('../test/dist/lib/Employee.js')
+const Employee = require('../dist/lib/Employee')
 const exampleEmployee = new Employee('Darrell', '1', 'darrell@gmail.com')
 
 test("Can instantiate Employee instance", () => {
