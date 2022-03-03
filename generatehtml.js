@@ -1,6 +1,5 @@
-// generateTeam is called from team function below
+// generateTeam, team data is passed in to generate appropriate HTML for created objects
 const generateTeam = (team) => {
-  console.log(team);
   // html set to an empty array in order to push desired HTML which depends on user selection
   const html = [];
   // generate manager html card by inserting manager information into card template
@@ -63,7 +62,7 @@ const generateTeam = (team) => {
     // intern HTML is pushed into html array to be inserted within the body of team function below
     html.push(internHtml)
   }
-  // for loop which iterates through team using getRole() to determine which html generating function is to be called
+  // for loop which iterates through team array using getRole() to determine which html generating function is to be called
   for (let i = 0; i < team.length; i++) {
     if (team[i].getRole() === "Manager") {
       generateManager(team[i])
@@ -77,10 +76,10 @@ const generateTeam = (team) => {
   return html.join("")
 }
 
-// export team to be used in index.js file
+// export team
 // generateTeam() is called with passed in team members object information from index.js
 module.exports = team => {
-
+// template for generated html page
   return `
 <!DOCTYPE html>
 <html lang="en">

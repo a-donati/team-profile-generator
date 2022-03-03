@@ -11,7 +11,8 @@ const outputPath = path.join(OUTPUT_DIR, "index.html");
 const teamMembers = [];
 
 // prompt for managers information
-const promptManager = () => {
+// promptManager is an IIFE, immediately runs once user runs the program
+const promptManager = (() => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -32,6 +33,7 @@ const promptManager = () => {
             name: 'employeeId',
             message: 'Enter employee ID:',
             validate: employeeId => {
+                // validate input
                 if (employeeId) {
                     return true;
                 } else {
@@ -45,6 +47,7 @@ const promptManager = () => {
             name: 'email',
             message: 'Enter employee email:',
             validate: email => {
+                // validate input
                 if (email) {
                     return true;
                 } else {
@@ -58,6 +61,7 @@ const promptManager = () => {
             name: 'officeNumber',
             message: 'Enter Manager office number:',
             validate: officeNumber => {
+                // validate input
                 if (officeNumber) {
                     return true;
                 } else {
@@ -69,7 +73,7 @@ const promptManager = () => {
 
     ])
         .then(answers => {
-            console.log(answers);
+            // console.log(answers);
             // create new manager object from answers
             const manager = new Manager(answers.name, answers.employeeId, answers.email, answers.officeNumber);
             // push new manager to teamMembers array
@@ -77,9 +81,9 @@ const promptManager = () => {
             // call promptMenu()
             promptMenu();
         })
-}
+})()
 
-// user selects a choice below to continue
+// user selects a choice from list below to continue
 const promptMenu = () => {
     return inquirer.prompt([
         {
@@ -128,6 +132,7 @@ const promptEngineer = () => {
             name: 'employeeId',
             message: 'Enter employee ID:',
             validate: employeeId => {
+                // validate input
                 if (employeeId) {
                     return true;
                 } else {
@@ -141,6 +146,7 @@ const promptEngineer = () => {
             name: 'email',
             message: 'Enter employee email:',
             validate: email => {
+                // validate input
                 if (email) {
                     return true;
                 } else {
@@ -154,6 +160,7 @@ const promptEngineer = () => {
             name: 'gitHub',
             message: 'Enter Engineer\'s GitHub username:',
             validate: gitHub => {
+                // validate input
                 if (gitHub) {
                     return true;
                 } else {
@@ -195,6 +202,7 @@ const promptIntern = () => {
             name: 'employeeId',
             message: 'Enter employee ID:',
             validate: employeeId => {
+                // validate input
                 if (employeeId) {
                     return true;
                 } else {
@@ -208,6 +216,7 @@ const promptIntern = () => {
             name: 'email',
             message: 'Enter employee email:',
             validate: email => {
+                // validate input
                 if (email) {
                     return true;
                 } else {
@@ -221,6 +230,7 @@ const promptIntern = () => {
             name: 'schoolName',
             message: 'Enter Intern\'s school name:',
             validate: schoolName => {
+                // validate input
                 if (schoolName) {
                     return true;
                 } else {
@@ -235,7 +245,7 @@ const promptIntern = () => {
             const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.schoolName);
             // push intern object to teamMembers array
             teamMembers.push(intern);
-            console.log(teamMembers);
+            // console.log(teamMembers);
             // call promptMenu() for user to choose how to proceed
             promptMenu();
         })
@@ -250,12 +260,5 @@ const buildTeam = () => {
     }
     // write to /output/index.html with generateTeam(teamMembers) data
     fs.writeFileSync(outputPath, generateTeam(teamMembers), "utf-8")
-    // fs.writeFile('./tests/dist/index.html', generateTeam(teamMembers), (err) => err ? console.error(err) : console.log('Success!'));
 }
-
-
-const init = () => {
-    promptManager();
-}
-init()
 

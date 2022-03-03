@@ -1,4 +1,3 @@
-// choice prompt - choose manager, engineer, intern
 class Employee {
     constructor(name, id, email) {
         this.name = name;
