@@ -1,13 +1,13 @@
 // choice prompt - choose manager, engineer, intern
 class Employee {
-    constructor(name, id, email){
+    constructor(name, id, email) {
         this.name = name;
         this.id = id;
         this.email = email;
         this.role = 'Employee'
     }
 
-    getName(){
+    getName() {
         return this.name;
     }
 
@@ -15,7 +15,7 @@ class Employee {
         return this.id;
     }
 
-    getEmail(){
+    getEmail() {
         return this.email;
     }
 

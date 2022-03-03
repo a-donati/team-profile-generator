@@ -1,11 +1,11 @@
 // generateTeam is called from team function below
 const generateTeam = (team) => {
-    console.log(team);
-    // html set to an empty array in order to push desired HTML which depends on user selection
-    const html = [];
-    // generate manager html card by inserting manager information into card template
-    const generateManager = manager => {
-        let managerHtml = `
+  console.log(team);
+  // html set to an empty array in order to push desired HTML which depends on user selection
+  const html = [];
+  // generate manager html card by inserting manager information into card template
+  const generateManager = manager => {
+    let managerHtml = `
         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
           <div class="card-body d-flex flex-column">
@@ -20,12 +20,12 @@ const generateTeam = (team) => {
         </div>
       </div>
         `;
-        // manager HTML is pushed into html array to be inserted within the body of team function below
-        html.push(managerHtml)
-    }
-    // generate engineer html card using engineer object key value pairs
-    const generateEngineer = engineer => {
-        let engineerHtml = `
+    // manager HTML is pushed into html array to be inserted within the body of team function below
+    html.push(managerHtml)
+  }
+  // generate engineer html card using engineer object key value pairs
+  const generateEngineer = engineer => {
+    let engineerHtml = `
         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
           <div class="card-body d-flex flex-column">
@@ -40,12 +40,12 @@ const generateTeam = (team) => {
         </div>
       </div>
         `;
-         // engineer HTML is pushed into html array to be inserted within the body of team function below
-        html.push(engineerHtml)
-    }
-        // generate intern html card using intern object key value pairs
-        const generateIntern = intern => {
-            let internHtml = `
+    // engineer HTML is pushed into html array to be inserted within the body of team function below
+    html.push(engineerHtml)
+  }
+  // generate intern html card using intern object key value pairs
+  const generateIntern = intern => {
+    let internHtml = `
             <div class="col-lg-4 mb-3 d-flex align-items-stretch">
             <div class="card">
               <div class="card-body d-flex flex-column">
@@ -60,28 +60,28 @@ const generateTeam = (team) => {
             </div>
           </div>
             `;
-             // intern HTML is pushed into html array to be inserted within the body of team function below
-            html.push(internHtml)
-        }
-        // for loop which iterates through team using getRole() to determine which html generating function is to be called
-        for(let i = 0; i < team.length; i++){
-            if(team[i].getRole() === "Manager"){
-                generateManager(team[i])
-            }if(team[i].getRole() === "Engineer") {
-                generateEngineer(team[i]);
-            } if(team[i].getRole() === "Intern") {
-                generateIntern(team[i]);
-            }
-        }
-        // .join() pieces the html array together, forming one HTML template which is displayed on the created html page containing the inserted information
-        return html.join("")
+    // intern HTML is pushed into html array to be inserted within the body of team function below
+    html.push(internHtml)
+  }
+  // for loop which iterates through team using getRole() to determine which html generating function is to be called
+  for (let i = 0; i < team.length; i++) {
+    if (team[i].getRole() === "Manager") {
+      generateManager(team[i])
+    } if (team[i].getRole() === "Engineer") {
+      generateEngineer(team[i]);
+    } if (team[i].getRole() === "Intern") {
+      generateIntern(team[i]);
     }
+  }
+  // .join() pieces the html array together, forming one HTML template which is displayed on the created html page containing the inserted information
+  return html.join("")
+}
 
-    // export team to be used in index.js file
-    // generateTeam() is called with passed in team members object information from index.js
+// export team to be used in index.js file
+// generateTeam() is called with passed in team members object information from index.js
 module.exports = team => {
 
-return `
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
