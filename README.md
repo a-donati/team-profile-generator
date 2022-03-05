@@ -4,7 +4,7 @@
 
 ## Description
 
-A team profile generator created using node.js to help automate creating a employee roster. User will be prompted to enter the manager, engineer and intern information which will be used to generate a template to display the input. Template includes a banner and employee information displayed in cards. The generated employee profile index html page is clean and mobile responsive. Classes were tested using jest dependency.
+A team profile generator created using node.js to help automate creating an employee roster. User will be prompted to enter the manager, engineer and intern information, which will be used to generate a template to display the input. Template includes a banner and employee information displayed in a card format. The generated employee profile index.html page is clean and mobile responsive. Classes were tested using [Jest](https://www.npmjs.com/package/jest). 
 
 ## Table of Contents
 
@@ -21,9 +21,10 @@ From GitHub, fork or clone the repo. The user must have Node.js installed. Once 
 
 ## Usage
 
-From the application's root directory, run `node index.js`. Follow the user prompts to provide the content for the generated html page. Upon completion, the application will generate a new file, `index.html`, in the `output ` directory.
+From the application's root directory, run `node index.js`. Follow the user prompts to provide the content for the generated html page. Upon completion, the application will generate a new file, `index.html`, in the `output` directory.
 
-![screenshot]()
+![Gif demonstration of team-profile-generator usage](dist/lib/images/employee-roster-demo.gif)
+![html generated output page for employee roster](dist/lib/images/team-profile-generator-screenshot.png)
 
 ## Refrences
 

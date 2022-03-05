@@ -94,7 +94,7 @@ module.exports = team => {
     <title>Team Profile</title>
 </head>
 <body class="bg-light">
-    <header class="bg-dark p-4"><h1 class="text-white mx-auto text-center"><i class='fa fa-user-circle p-4'></i>Employees</h1></header>
+    <header class="bg-dark p-4"><h1 class="text-white mx-auto text-center"><i class='fa fa-user-circle p-4'></i>Employee Roster</h1></header>
 
     <main>
 

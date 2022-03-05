@@ -260,5 +260,6 @@ const buildTeam = () => {
     }
     // write to /output/index.html with generateTeam(teamMembers) data
     fs.writeFileSync(outputPath, generateTeam(teamMembers), "utf-8")
+    console.log('Employee roster has been generated: output/index.html')
 }
 
