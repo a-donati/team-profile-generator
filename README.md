@@ -10,7 +10,7 @@ A team profile generator created using node.js to help automate creating an empl
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Refrences](#Refrences)
+- [References](#References)
 - [License](#license)
 - [Contributing](#Contributing)
 - [Questions](#Questions)
@@ -26,7 +26,7 @@ From the application's root directory, run `node index.js`. Follow the user prom
 ![Gif demonstration of team-profile-generator usage](dist/lib/images/employee-roster-demo.gif)
 ![html generated output page for employee roster](dist/lib/images/team-profile-generator-screenshot.png)
 
-## Refrences
+## References
 
 - [Jest](https://www.npmjs.com/package/jest)
 - [Inquirer](https://www.npmjs.com/package/inquirer)
